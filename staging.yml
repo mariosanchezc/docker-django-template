@@ -1,0 +1,39 @@
+version: "2"
+services:
+  db:
+    extends:
+      file: base.yml
+      service: db
+    ports:
+      - "5436:5432"
+  vendors:
+    image: python:3.6
+    working_dir: /djangoproject
+    volumes:
+      - ./djangoproject/vendors:/djangoproject/vendors
+      - ./djangoproject/Requirements:/djangoproject/Requirements
+    environment:
+      PYTHONUSERBASE: /djangoproject/vendors
+    command: pip install -r /djangoproject/Requirements/staging.txt --user --upgrade
+
+  django_server:
+    extends:
+      file: base.yml
+      service: django_server
+    build:
+      args:
+        - DJANGO_ENV=staging
+    command: python3.6 manage.py runserver 0.0.0.0:8000
+    volumes: 
+      - ./djangoproject:/djangoproject
+    environment:
+      PYTHONUSERBASE: /djangoproject/vendors
+    stdin_open: true
+    tty: true
+    ports:
+      - "8050:8000"
+    depends_on:
+      - db
+volumes:
+  db:
+    external: true

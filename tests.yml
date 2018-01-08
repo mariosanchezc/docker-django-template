@@ -1,0 +1,26 @@
+version: "2"
+services:
+  db:
+    extends:
+      file: base.yml
+      service: db
+    ports:
+      - "5436:5432" 
+  django_test:
+    extends:
+      file: base.yml
+      service: django_project
+    build:
+      args:
+        - DJANGO_ENV=test
+    env_file: ./.env/.env_test
+    command: python3.6 manage.py test --keepdb
+    volumes: 
+      - ./djangogodare:/djangogodare
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+volumes:
+  db:
+    external: true

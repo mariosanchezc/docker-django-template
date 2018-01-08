@@ -1,0 +1,17 @@
+version: "2"
+services: 
+  db:
+    image: postgres:9.5
+    env_file: ./.env/.env_dev
+    volumes:
+      - db:/var/lib/postgresql/data/pgdata
+
+  vendors:
+    build: 
+      context: ./djangoproject
+    env_file: ./.env/.env_dev
+
+  django_project:
+    build: 
+      context: ./djangoproject
+    env_file: ./.env/.env_dev

@@ -19,7 +19,7 @@ services:
   django_server:
     extends:
       file: base.yml
-      service: django_server
+      service: django_project
     build:
       args:
         - DJANGO_ENV=production

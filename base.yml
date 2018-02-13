@@ -11,7 +11,7 @@ services:
       context: ./django_project
     env_file: ./.env/.env_dev
 
-  django_project:
+  django_commerce:
     build: 
       context: ./django_project
     env_file: ./.env/.env_dev

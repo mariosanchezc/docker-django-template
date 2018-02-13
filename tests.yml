@@ -9,7 +9,7 @@ services:
   django_test:
     extends:
       file: base.yml
-      service: django_project
+      service: django_commerce
     build:
       args:
         - DJANGO_ENV=test

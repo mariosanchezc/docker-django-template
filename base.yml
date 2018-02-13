@@ -8,10 +8,10 @@ services:
 
   vendors:
     build: 
-      context: ./djangoproject
+      context: ./django_commerce
     env_file: ./.env/.env_dev
 
-  django_project:
+  django_commerce:
     build: 
-      context: ./djangoproject
+      context: ./django_commerce
     env_file: ./.env/.env_dev

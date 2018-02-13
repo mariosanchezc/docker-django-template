@@ -9,14 +9,14 @@ services:
   django_test:
     extends:
       file: base.yml
-      service: django_project
+      service: django_commerce
     build:
       args:
         - DJANGO_ENV=test
     env_file: ./.env/.env_test
     command: python3.6 manage.py test --keepdb
     volumes: 
-      - ./djangoproject:/djangoproject
+      - ./django_commerce:/django_commerce
     stdin_open: true
     tty: true
     depends_on:

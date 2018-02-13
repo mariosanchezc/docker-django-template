@@ -8,26 +8,26 @@ services:
       - "5436:5432"
   vendors:
     image: python:3.6
-    working_dir: /djangoproject
+    working_dir: /django_commerce
     volumes:
-      - ./djangoproject/vendors:/djangoproject/vendors
-      - ./djangoproject/Requirements:/djangoproject/Requirements
+      - ./django_commerce/vendors:/django_commerce/vendors
+      - ./django_commerce/Requirements:/django_commerce/Requirements
     environment:
-      PYTHONUSERBASE: /djangoproject/vendors
-    command: pip install -r /djangoproject/Requirements/production.txt --user --upgrade
+      PYTHONUSERBASE: /django_commerce/vendors
+    command: pip install -r /django_commerce/Requirements/production.txt --user --upgrade
 
-  django_server:
+  django_commerce:
     extends:
       file: base.yml
-      service: django_project
+      service: django_commerce
     build:
       args:
         - DJANGO_ENV=production
     command: python3.6 manage.py runserver 0.0.0.0:8000
     volumes: 
-      - ./djangoproject:/djangoproject
+      - ./django_commerce:/django_commerce
     environment:
-      PYTHONUSERBASE: /djangoproject/vendors
+      PYTHONUSERBASE: /django_commerce/vendors
     stdin_open: true
     tty: true
     ports:

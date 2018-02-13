@@ -6,6 +6,7 @@ Este template se lo ha construido para crear de manera sencilla un proyecto en d
 - Ubuntu 16 con python3.6
 - Django 2.0
 - Postgresql
+- Otras librerías python.
 
 ### PASO 1 Construcción de un proyecto usando Docker y Django
 
@@ -13,7 +14,7 @@ Luego de clonar el proyecto encontraras un archivo llamado create_project.sh
 el cual contiene ciertas instrucciones para iniciar un proyecto.
 Para ejecutar este script se coloca en el terminal por ejemplo lo siguiente:
 
-* sh create_project.sh django_project commercedb fernandodev93 admin1234 COMMERCE
+* sh create_project.sh django_project commercedb fernandodev93 passwordfernandodev93 COMMERCE
 
 Parámetros enviados al script
 - 1 django_project : nombre de la carpeta contenedora .
@@ -40,6 +41,7 @@ STATIC_URL = '/static/'
 
 ### PASO 3. Añada la variable DJANGO_SETTINGS_MODULE al archivo env_dev
 DJANGO_SETTINGS_MODULE=COMMERCE.settings.local
+* COMMERCE : es el nombre del proyecto de django pasado en el script anterior
 DJANGO_SECRET_KEY='SECRET del archivo base.py'
 
 ### PASO 4. Creación de una APP.

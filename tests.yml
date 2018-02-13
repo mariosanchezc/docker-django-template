@@ -16,7 +16,7 @@ services:
     env_file: ./.env/.env_test
     command: python3.6 manage.py test --keepdb
     volumes: 
-      - ./djangoproject:/djangoproject
+      - ./django_project:/django_project
     stdin_open: true
     tty: true
     depends_on:

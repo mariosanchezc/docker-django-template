@@ -8,15 +8,15 @@ services:
       - "5436:5432"
   vendors:
     image: python:3.6
-    working_dir: /djangoproject
+    working_dir: /django_project
     volumes:
-      - ./djangoproject/vendors:/djangoproject/vendors
-      - ./djangoproject/Requirements:/djangoproject/Requirements
+      - ./django_project/vendors:/django_project/vendors
+      - ./django_project/Requirements:/django_project/Requirements
     environment:
-      PYTHONUSERBASE: /djangoproject/vendors
-    command: pip install -r /djangoproject/Requirements/local.txt --user --upgrade
+      PYTHONUSERBASE: /django_project/vendors
+    command: pip install -r /django_project/Requirements/local.txt --user --upgrade
 
-  django_server:
+  django_project:
     extends:
       file: base.yml
       service: django_project
@@ -25,9 +25,9 @@ services:
         - DJANGO_ENV=local
     command: python3.6 manage.py runserver 0.0.0.0:8000
     volumes: 
-      - ./djangoproject:/djangoproject
+      - ./django_project:/django_project
     environment:
-      PYTHONUSERBASE: /djangoproject/vendors
+      PYTHONUSERBASE: /django_project/vendors
     stdin_open: true
     tty: true
     ports:

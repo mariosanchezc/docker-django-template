@@ -8,10 +8,10 @@ services:
 
   vendors:
     build: 
-      context: ./djangoproject
+      context: ./django_project
     env_file: ./.env/.env_dev
 
   django_project:
     build: 
-      context: ./djangoproject
+      context: ./django_project
     env_file: ./.env/.env_dev

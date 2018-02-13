@@ -11,7 +11,7 @@ Este template se lo ha construido para crear de manera sencilla un proyecto en d
 
 Luego de clonar el proyecto encontraras un archivo llamado create_project.sh
 el cual contiene ciertas instrucciones para iniciar un proyecto.
-Para ejecutar este script se coloca en el terminal lo siguiente:
+Para ejecutar este script se coloca en el terminal por ejemplo lo siguiente:
 
 * sh create_project.sh django_project commercedb fernandodev93 admin1234 COMMERCE
 

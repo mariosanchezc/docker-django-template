@@ -52,7 +52,7 @@ POSTGRES_DB=$2
 POSTGRES_USER=$3
 POSTGRES_PASSWORD=$4
 PGDATA=/var/lib/postgresql/data/pgdata
-DB_HOST=db_dsafio
+DB_HOST=db
 DB_PORT=5432
 " > .env/.env_dev
 
@@ -63,6 +63,8 @@ docker-compose up vendors
 docker-compose run --rm $1 django-admin startproject $5 .
 
 mkdir $1/$5/settings
+
+touch $1/$5/settings/__init__.py
 
 cp $1/$5/settings.py $1/$5/settings/base.py
 

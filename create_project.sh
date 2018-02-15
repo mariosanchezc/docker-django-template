@@ -58,6 +58,8 @@ DB_PORT=5432
 
 docker-compose build 
 
+docker volume create --name=db
+
 docker-compose up vendors 
 
 docker-compose run --rm $1 django-admin startproject $5 .

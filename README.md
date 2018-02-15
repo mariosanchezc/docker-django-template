@@ -47,9 +47,11 @@ DJANGO_SECRET_KEY='SECRET del archivo base.py'
 ### PASO 4. Creación de una APP.
     Creación de una app:
         - docker-compose run django_project python3 manage.py startapp <NOMBRE app> <directorio>
+        - y vuelva a construir con docker-compose build
         - Ejemplo:
             - Primero cree la carpeta de usuarios sin ningún contenido en el host. Ejem: mkdir apps/usuarios
             - Luego ejecute: docker-compose run django_project python3 manage.py startapp usuarios apps/usuarios
+        
 
 ## Otras Configuraciones
 

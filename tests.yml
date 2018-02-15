@@ -14,7 +14,7 @@ services:
       args:
         - DJANGO_ENV=test
     env_file: ./.env/.env_test
-    command: python3.6 manage.py test --keepdb
+    command: python3 manage.py test --keepdb
     volumes: 
       - ./django_project:/django_project
     stdin_open: true

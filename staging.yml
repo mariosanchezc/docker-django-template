@@ -23,7 +23,7 @@ services:
     build:
       args:
         - DJANGO_ENV=staging
-    command: python3.6 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes: 
       - ./django_project:/django_project
     environment:

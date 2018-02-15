@@ -7,7 +7,7 @@
 
 mkdir $1
 
-cp -R Requirements/ $1
+mv -R Requirements/ $1
 
 
 echo "FROM fernandodev93/ubuntu16_python35 
@@ -68,7 +68,7 @@ mkdir $1/$5/settings
 
 touch $1/$5/settings/__init__.py
 
-cp $1/$5/settings.py $1/$5/settings/base.py
+mv $1/$5/settings.py $1/$5/settings/base.py
 
 echo "
 from .base import *

@@ -7,7 +7,7 @@
 
 mkdir $1
 
-mv -R Requirements/ $1
+mv Requirements/ $1
 
 
 echo "FROM fernandodev93/ubuntu16_python35 

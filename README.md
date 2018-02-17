@@ -14,7 +14,10 @@ Luego de clonar el proyecto encontraras un archivo llamado create_project.sh
 el cual contiene ciertas instrucciones para iniciar un proyecto.
 Para ejecutar este script se coloca en el terminal por ejemplo lo siguiente:
 
-* sh create_project.sh django_project commercedb fernandodev93 passwordfernandodev93 COMMERCE
+**sh create_project.sh <django_project> <commercedb> <fernandodev93> <passwordfernandodev93> <COMMERCE>**
+
+**EJEMPLO:**
+**sh create_project.sh django_project commercedb fernandodev93 passwordfernandodev93 COMMERCE**
 
 Parámetros enviados al script
 - 1 django_project : nombre de la carpeta contenedora .
@@ -27,21 +30,33 @@ Parámetros enviados al script
 - Copia del archivo base.py el valor de la variable SECRET_KEY y reemplazala en el archivo env_dev creado en la carpeta .env/.
 - Luego de copiar la variable en el mismo archivo base.py se debe eliminar las siguientes líneas de código debido a que en el archivo local.py ya se hace referencia.
 
-SECRET_KEY = 'SECRET'
+SECRET_KEY = 'SECRET' 
+
 DEBUG = True
+
 ALLOWED_HOSTS = []
 
+
 DATABASES = {
+
     'default': {
+
         'ENGINE': 'django.db.backends.sqlite3',
+
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
     }
+
 }
+
 STATIC_URL = '/static/'
+
 
 ### PASO 3. Añada la variable DJANGO_SETTINGS_MODULE al archivo env_dev
 DJANGO_SETTINGS_MODULE=COMMERCE.settings.local
-* COMMERCE : es el nombre del proyecto de django pasado en el script anterior
+
+* COMMERCE : es el nombre del proyecto de django pasado en el script anterior.
+
 DJANGO_SECRET_KEY='SECRET del archivo base.py'
 
 ### PASO 4. Creación de una APP.

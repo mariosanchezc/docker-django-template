@@ -14,8 +14,6 @@ Luego de clonar el proyecto encontraras un archivo llamado create_project.sh
 el cual contiene ciertas instrucciones para iniciar un proyecto.
 Para ejecutar este script se coloca en el terminal por ejemplo lo siguiente:
 
-**sh create_project.sh <django_project> <commercedb> <fernandodev93> <passwordfernandodev93> <COMMERCE>**
-
 **EJEMPLO:**
 **sh create_project.sh django_project commercedb fernandodev93 passwordfernandodev93 COMMERCE**
 

@@ -19,7 +19,7 @@ services:
   django_project:
     extends:
       file: base.yml
-      service: django_commerce
+      service: django_project
     build:
       args:
         - DJANGO_ENV=local
